@@ -1,20 +1,16 @@
-import * as challenge from "./challenge";
-
-const {
-  totalScoresArr,
+import {
+  checkItemInStock,
+  checkPrimaryColours,
+  checkStringPalindrome,
+  encryptString,
   reverseString,
   sortCharactersAlphabetically,
   sortNumbersHighToLow,
-  checkItemInstock,
-  checkPrimaryColours,
-  checkStringPalindrome,
   totalNestedScoresArr,
-  encryptString,
-} = challenge;
+  totalScoresArr,
+} from "./challenge";
 
-/**
- * REMOVE X FROM DESCRIBE FUNCTION TO STOP SKIPPING TEST BLOCKS
- */
+// REMOVE X FROM DESCRIBE FUNCTION TO STOP SKIPPING TEST BLOCKS
 
 describe("Testing totalScoresArr()", () => {
   const scoresArr = Array(50).fill(20);
@@ -50,7 +46,6 @@ xdescribe("Testing reverseString()", () => {
     expect(reverseString("coconut")).toBe("tunococ");
     expect(reverseString("test")).toBe("tset");
   });
-
 });
 
 xdescribe("Testing sortCharactersAlphabetically()", () => {
@@ -58,32 +53,55 @@ xdescribe("Testing sortCharactersAlphabetically()", () => {
   const upperCaseCharArr = "DLOEJMIXWRSNFACQYUKVHTGZPB".split("");
   const sortedCharArr = "abcdefghijklmnopqrstuvwxyz".split("");
   const mixedCaseArr = [...lowerCaseCharArr, ...upperCaseCharArr];
-  const sortedMixedCaseArr = "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz".split("");
+  const sortedMixedCaseArr =
+    "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz".split("");
 
   it("Should return an Array", () => {
-    expect(Array.isArray(sortCharactersAlphabetically(lowerCaseCharArr))).toBeTruthy();
+    expect(
+      Array.isArray(sortCharactersAlphabetically(lowerCaseCharArr))
+    ).toBeTruthy();
     expect(Array.isArray(sortCharactersAlphabetically(["Test"]))).toBeTruthy();
   });
 
   it("Should return an Array of Strings", () => {
-    const stringTest = sortCharactersAlphabetically(lowerCaseCharArr).every((char) => typeof char === "string");
+    const stringTest = sortCharactersAlphabetically(lowerCaseCharArr).every(
+      (char) => typeof char === "string"
+    );
     expect(stringTest).toBeTruthy();
   });
 
   it("Should sort lowercase letters alphabetically", () => {
-    expect(sortCharactersAlphabetically(lowerCaseCharArr)).toEqual(sortedCharArr);
+    expect(sortCharactersAlphabetically(lowerCaseCharArr)).toEqual(
+      sortedCharArr
+    );
     expect(sortCharactersAlphabetically(sortedCharArr)).toEqual(sortedCharArr);
-    expect(sortCharactersAlphabetically(["c", "b", "a"])).toEqual(["a", "b", "c"]);
+    expect(sortCharactersAlphabetically(["c", "b", "a"])).toEqual([
+      "a",
+      "b",
+      "c",
+    ]);
   });
 
   it("Should sort uppercase letters alphabetically", () => {
-    expect(sortCharactersAlphabetically(upperCaseCharArr)).toEqual(sortedCharArr);
-    expect(sortCharactersAlphabetically(["C", "B", "B"])).toEqual(["b", "b", "c"]);
+    expect(sortCharactersAlphabetically(upperCaseCharArr)).toEqual(
+      sortedCharArr
+    );
+    expect(sortCharactersAlphabetically(["C", "B", "B"])).toEqual([
+      "b",
+      "b",
+      "c",
+    ]);
   });
 
   it("Should sort Uppercase and lowercase characters", () => {
-    expect(sortCharactersAlphabetically(mixedCaseArr)).toEqual(sortedMixedCaseArr);
-    expect(sortCharactersAlphabetically(["A", "b", "C"])).toEqual(["a", "b", "c"]);
+    expect(sortCharactersAlphabetically(mixedCaseArr)).toEqual(
+      sortedMixedCaseArr
+    );
+    expect(sortCharactersAlphabetically(["A", "b", "C"])).toEqual([
+      "a",
+      "b",
+      "c",
+    ]);
   });
 
   it("Should be the same length as the input", () => {
@@ -91,7 +109,6 @@ xdescribe("Testing sortCharactersAlphabetically()", () => {
     expect(sortCharactersAlphabetically(mixedCaseArr).length).toBe(52);
     expect(sortCharactersAlphabetically(["a", "a", "a"]).length).toBe(3);
   });
-
 });
 
 xdescribe("Testing sortNumbersHighToLow()", () => {
@@ -107,7 +124,9 @@ xdescribe("Testing sortNumbersHighToLow()", () => {
   });
 
   it("Should return an Array of Numbers", () => {
-    const numberTest = sortNumbersHighToLow(lowToHigh).every((number) => typeof number === "number");
+    const numberTest = sortNumbersHighToLow(lowToHigh).every(
+      (number) => typeof number === "number"
+    );
     expect(numberTest).toBeTruthy();
   });
 
@@ -131,9 +150,13 @@ xdescribe("Testing sortNumbersHighToLow()", () => {
     expect(sortNumbersHighToLow([40, 7, 20, 53]).length).toBe(4);
   });
 
+  it("Should not modify the original array", () => {
+    const numArr = [5, 7, 2];
+    expect(sortNumbersHighToLow(numArr)).not.toStrictEqual(numArr);
+  });
 });
 
-xdescribe("Testing checkItemInstock()", () => {
+xdescribe("Testing checkItemInStock()", () => {
   const stockList = [
     "apple",
     "banana",
@@ -148,34 +171,44 @@ xdescribe("Testing checkItemInstock()", () => {
     "melon",
   ];
 
-  const expectedMatchMessage = (item, index) => `${item} is instock, it is on aisle ${index}.`;
-  const expectedNoMatchMessage = (item) => `Sorry ${item} is not instock.`;
+  const expectedMatchMessage = (item, index) =>
+    `${item} is in stock, it is on aisle ${index}.`;
+  const expectedNoMatchMessage = (item) => `Sorry ${item} is not in stock.`;
 
   it("Should return a String", () => {
-    expect(typeof checkItemInstock("coconut")).toBe("string");
-    expect(typeof checkItemInstock("test")).toBe("string");
+    expect(typeof checkItemInStock("coconut")).toBe("string");
+    expect(typeof checkItemInStock("test")).toBe("string");
   });
 
   it("Should handle single items from the stock list", () => {
-    expect(checkItemInstock("apple")).toBe(expectedMatchMessage("apple", 0));
-    expect(checkItemInstock("melon")).toBe(expectedMatchMessage("melon", 10));
+    expect(checkItemInStock("apple")).toBe(expectedMatchMessage("apple", 0));
+    expect(checkItemInStock("melon")).toBe(expectedMatchMessage("melon", 10));
   });
 
   it("Should handle single no match items", () => {
-    expect(checkItemInstock("carrot")).toBe(expectedNoMatchMessage("carrot"));
-    expect(checkItemInstock("kiwi")).toBe(expectedNoMatchMessage("kiwi"));
+    expect(checkItemInStock("carrot")).toBe(expectedNoMatchMessage("carrot"));
+    expect(checkItemInStock("kiwi")).toBe(expectedNoMatchMessage("kiwi"));
   });
 
   it("Should handle every item in the stock list", () => {
     const checkAllStock = stockList.every(
-      (item, index) => checkItemInstock(item) === expectedMatchMessage(item, index)
+      (item, index) =>
+        checkItemInStock(item) === expectedMatchMessage(item, index)
     );
     expect(checkAllStock).toBe(true);
   });
 });
 
 xdescribe("Testing checkPrimaryColours()", () => {
-  const rainbowColours = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
+  const rainbowColours = [
+    "red",
+    "orange",
+    "yellow",
+    "green",
+    "blue",
+    "indigo",
+    "violet",
+  ];
   const primaryColours = ["red", "yellow", "blue"];
 
   it("Should return a Boolean", () => {
@@ -197,7 +230,6 @@ xdescribe("Testing checkPrimaryColours()", () => {
     expect(checkPrimaryColours(Array(100).fill("red"))).toBe(true);
     expect(checkPrimaryColours(Array(5000).fill("brown"))).toBe(false);
   });
-
 });
 
 xdescribe("Testing checkStringPalindrome()", () => {
@@ -246,7 +278,9 @@ xdescribe("Testing totalNestedScoresArr()", () => {
   });
 
   it("Should return array of numbers ", () => {
-    const numberTest = totalNestedScoresArr(nestedScoreArr).every((number) => typeof number === "number");
+    const numberTest = totalNestedScoresArr(nestedScoreArr).every(
+      (number) => typeof number === "number"
+    );
     expect(numberTest).toBe(true);
   });
 
@@ -283,8 +317,12 @@ xdescribe("Testing encryptString()", () => {
   });
 
   it("Should encrypt large words", () => {
-    expect(encryptString("antidisestablishmentarianism")).toBe("aistlhnrnmndeaimtiitisbseaas");
-    expect(encryptString("hippopotomonstrosesquippedaliophobia")).toBe("hpomsosielpbiototsqpdihipponreupaooa");
+    expect(encryptString("antidisestablishmentarianism")).toBe(
+      "aistlhnrnmndeaimtiitisbseaas"
+    );
+    expect(encryptString("hippopotomonstrosesquippedaliophobia")).toBe(
+      "hpomsosielpbiototsqpdihipponreupaooa"
+    );
   });
 
   it("Should keep spaces between words", () => {

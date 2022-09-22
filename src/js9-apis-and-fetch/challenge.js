@@ -1,34 +1,34 @@
 /* This challenge build upon previous knowledge and introduces the concept of complex data types (arrays of objects) */
 
 /* 
-  All challenges in this repository are seperated into four levels: Foundation, Intermediate, Advanced and Expert.
+  All challenges in this repository are separated into four levels: Foundation, Intermediate, Advanced and Expert.
   The expectation is to complete all Foundation level challenges, with Intermediate and upwards pushing your knowledge
   and may require you to google things in order to solve them. If you find an answer online somewhere, be kind and
   share it with the group!
 */
 
-/* To see the structure of the "api's" please have a look in mockPeopleApi.json and mockInterestApi.json */
+/* To see the structure of the "APIs" please have a look in mockPeopleApi.json and mockInterestApi.json */
 
 /* Foundation Challenges */
 
 /**
- * A function which takes a url and returns the JSONified response
+ * A function which takes a url and returns the JSON-ified response
  *
  * @param {string} url - The url of the API to fetch from
  * @returns {{id: string, name: string, age: number, height: number, interests: string[], isEmployed: boolean}[]} The data from the API
  */
- export const getData = (url) => {
-  // Your code here
+export const getData = async (url) => {
+  return;
 };
 
 /**
  * A function which calls the API from the provided URL and returns just the list of names from each object.
  *
  * @param {string} url - The url of the API to fetch from
- * @returns {string[]} The list of names from the API
+ * @returns {string[]} The list of names on each object from the API
  */
-export const getNames = (url) => {
-  // Your code here
+export const getNames = async (url) => {
+  return;
 };
 
 /**
@@ -37,8 +37,8 @@ export const getNames = (url) => {
  * @param {string} url - The url of the API to fetch from
  * @return {{id: string, name: string, age: number, height: number, interests: string[], isEmployed: boolean}[]} The employed people from the API
  */
-export const getEmployedPeople = (url) => {
-  // Your code here
+export const getEmployedPeople = async (url) => {
+  return;
 };
 
 /* Intermediate Challenges */
@@ -51,20 +51,22 @@ export const getEmployedPeople = (url) => {
  * @param {string} id - The ID of the person object to return
  * @returns {{id: string, name: string, age: number, height: number, interests: string[], isEmployed: boolean} | string} A person object OR A string saying "Person not found"
  */
-export const findPersonWithId = (url, id) => {
-  // Your code here
+export const findPersonWithId = async (url, id) => {
+  return;
 };
 
 /**
  * A function which takes a url and an interest. It will fetch from an API at the url and return people who have a
  * matching interest.
  *
+ * If no matches are found return "No people with interest found"
+ *
  * @param {string} url - The url of the API to fetch from
  * @param {string} interest - The interest to match
  * @returns {{id: string, name: string, age: number, height: number, interests: string[], isEmployed: boolean}[] | string} A group of person objects OR A string saying "No people with interest found"
  */
-export const getPeopleWithMatchingInterests = (url, interest) => {
-  // Your code here
+export const getPeopleWithMatchingInterests = async (url, interest) => {
+  return;
 };
 
 /* Advanced Challenges */
@@ -99,16 +101,16 @@ export const getPeopleWithMatchingInterests = (url, interest) => {
  * This should NOT modify the original data
  *
  * @param {string} url - The url of the API to fetch from
- * @returns {{id: string, name: string, age: number, height: number, interests: string[], isEmployed: boolean, decscription: string}[]} A group of person objects with added description key
+ * @returns {{id: string, name: string, age: number, height: number, interests: string[], isEmployed: boolean, description: string}[]} A group of person objects with added description key
  */
-export const setDescriptions = (url) => {
-  // Your code here
+export const setDescriptions = async (url) => {
+  return;
 };
 
 /* Expert Challenges */
 
 /**
- * A function that uses 2 API's to fill information about the interests of each person.
+ * A function that uses 2 APIs to fill information about the interests of each person.
  * Each person object that's returned should have this structure:
  * {
  *   id: "003",
@@ -151,6 +153,6 @@ export const setDescriptions = (url) => {
  *  isEmployed: boolean,
  * }[]}
  */
-export const setInterestDetails = (peopleUrl, interestsUrl) => {
-  // Your code here
+export const setInterestDetails = async (peopleUrl, interestsUrl) => {
+  return;
 };

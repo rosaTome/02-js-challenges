@@ -1,7 +1,7 @@
 /* This challenge is designed to test you knowledge of Types and Control Flow (If and Switch Statements) */
 
 /* 
-  All challenges in this repository are seperated into four levels: Foundation, Intermediate, Advanced and Expert.
+  All challenges in this repository are separated into four levels: Foundation, Intermediate, Advanced and Expert.
   The expectation is to complete all Foundation level challenges, with Intermediate and upwards pushing your knowledge
   and may require you to google things in order to solve them. If you find an answer online somewhere, be kind and
   share it with the group!
@@ -109,7 +109,7 @@ export const convertStringToNumber = () => {
  * A function that uses regex to programmatically test if a string contains uppercase letters.
  * This means if the string was different it would still accurately return true or false.
  *
- * !!NOTE!! You should use regex to solve this problem!
+ * Hint: you can use "Regex" to solve this problem (although it is not necessary!).
  *
  * @returns {boolean} true || false
  */
@@ -119,11 +119,13 @@ export const getHasUppercaseLetters = () => {
   // Write your code here
 };
 
-/* Expert Challenge */
+/* Expert Challenges */
 
 /**
  * A function that programmatically converts a string written in PascalCase to a string written in snake_case (lowercase with underscores).
  * This means if the PascalCase string changes then the function should still convert it.
+ *
+ * Hint: take a look at Regex for this one too!
  *
  * @returns {string} i_want_to_be_snake_case
  */

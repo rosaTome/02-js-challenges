@@ -1,20 +1,17 @@
-import * as challenge from "./challenge";
-const {
+import {
   createRecipeString,
-  getFirstAndLastItems,
-  totalScores,
-  moveFirstAndLastItems,
-  totalRange,
-  removeEvenNumbers,
-  generateHighscores,
-  generateAverage,
-  reverseOrder,
   encryptString,
-} = challenge;
+  generateAverage,
+  generateHighscores,
+  getFirstAndLastItems,
+  moveFirstAndLastItems,
+  removeEvenNumbers,
+  reverseOrder,
+  totalRange,
+  totalScores,
+} from "./challenge";
 
-/**
- * REMOVE X FROM DESCRIBE FUNCTION TO STOP SKIPPING TEST BLOCKS
- */
+// REMOVE X FROM DESCRIBE FUNCTION TO STOP SKIPPING TEST BLOCKS
 
 const coaches = ["Andy", "Bex", "Calum", "Charlie", "Matt", "Ollie", "Sam"];
 const items = ["Apple", "Orange", "Pear"];
@@ -113,7 +110,11 @@ xdescribe("Testing moveFirstAndLastItems()", () => {
 
   it("Should handle multiple inputs", () => {
     expect(moveFirstAndLastItems(items)).toEqual(["Pear", "Apple", "Orange"]);
-    expect(moveFirstAndLastItems(ingredients)).toEqual(["Tomato", "Bacon", "Lettuce"]);
+    expect(moveFirstAndLastItems(ingredients)).toEqual([
+      "Tomato",
+      "Bacon",
+      "Lettuce",
+    ]);
   });
 });
 
@@ -162,6 +163,7 @@ xdescribe("Testing generateAverage()", () => {
   it("Should calculate the average of different numbers", () => {
     expect(generateAverage([1, 2, 3, 4, 5, 6])).toBe(4);
     expect(generateAverage([50, 60, 30, 70])).toBe(53);
+    expect(generateAverage([50, 60, 30, 70, 61])).toBe(54);
   });
 
   it("Should calculate the average of same numbers", () => {
@@ -207,7 +209,11 @@ xdescribe("Testing generateHighscores()", () => {
   beforeEach(() => {
     players = ["Andy", "Bex", "Calum"];
     playerScores = [60, 99, 71];
-    highscores = ["P:1 Andy scored 60", "P:2 Bex scored 99", "P:3 Calum scored 71"];
+    highscores = [
+      "P:1 Andy scored 60",
+      "P:2 Bex scored 99",
+      "P:3 Calum scored 71",
+    ];
   });
 
   it("Should be defined", () => {
@@ -215,7 +221,9 @@ xdescribe("Testing generateHighscores()", () => {
   });
 
   it("Should return an Array with correct params", () => {
-    expect(Array.isArray(generateHighscores(players, playerScores))).toBeTruthy();
+    expect(
+      Array.isArray(generateHighscores(players, playerScores))
+    ).toBeTruthy();
   });
 
   it("Should return String with incorrect params", () => {
@@ -232,7 +240,9 @@ xdescribe("Testing generateHighscores()", () => {
   });
 
   it("Should not lose any players", () => {
-    expect(generateHighscores(Array(10).fill("A"), Array(10).fill(1)).length).toBe(10);
+    expect(
+      generateHighscores(Array(10).fill("A"), Array(10).fill(1)).length
+    ).toBe(10);
   });
 
   it("Should catch invalid parameters.", () => {
@@ -269,8 +279,12 @@ xdescribe("Testing encryptString()", () => {
   });
 
   it("Should encrypt large words", () => {
-    expect(encryptString("antidisestablishmentarianism")).toBe("aistlhnrnmndeaimtiitisbseaas");
-    expect(encryptString("hippopotomonstrosesquippedaliophobia")).toBe("hpomsosielpbiototsqpdihipponreupaooa");
+    expect(encryptString("antidisestablishmentarianism")).toBe(
+      "aistlhnrnmndeaimtiitisbseaas"
+    );
+    expect(encryptString("hippopotomonstrosesquippedaliophobia")).toBe(
+      "hpomsosielpbiototsqpdihipponreupaooa"
+    );
   });
 
   it("Should keep spaces between words", () => {

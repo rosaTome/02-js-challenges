@@ -1,16 +1,16 @@
-import * as challenge from "./challenge";
-
-const {
+import {
+  calculateAreaOfCircle,
+  calculateLifetimeSupply,
+  celsiusToFahrenheit,
+  checkIfNewHighScore,
   createFullName,
   findSmallestNumber,
-  multiplyNumbers,
-  checkIfNewHighScore,
-  celsiusToFahrenheit,
-  calculateLifetimeSupply,
   getGrade,
-  calculateAreaOfCircle,
-  getStudentSummary
-} = challenge;
+  getStudentSummary,
+  multiplyNumbers,
+} from "./challenge";
+
+// REMOVE X FROM DESCRIBE FUNCTION TO STOP SKIPPING TEST BLOCKS
 
 describe("createFullName() tests", () => {
   it("Should have a return", () => {
@@ -21,7 +21,7 @@ describe("createFullName() tests", () => {
     expect(createFullName("John", "Smith")).toBe("John Smith");
   });
 
-  it("Should work with arbritrary inputs", () => {
+  it("Should work with arbitrary inputs", () => {
     expect(createFullName("abc", "def")).toBe("abc def");
   });
 });
@@ -83,7 +83,9 @@ xdescribe("celsiusToFahrenheit() tests", () => {
   });
 
   it("Should convert 15 C to 59 F", () => {
-    expect(celsiusToFahrenheit(15)).toBe("15 degrees celsius is 59 degrees fahrenheit");
+    expect(celsiusToFahrenheit(15)).toBe(
+      "15 degrees celsius is 59 degrees fahrenheit"
+    );
   });
 });
 
@@ -106,7 +108,7 @@ xdescribe("getGrade() tests", () => {
     expect(getGrade(70)).toBeDefined();
   });
 
-  it("Should return 'Score Unavailable' if given an incorrect score", () => {
+  it("Should return 'Score unavailable' if given an incorrect score", () => {
     expect(getGrade(-20)).toBe("Score unavailable");
     expect(getGrade(120)).toBe("Score unavailable");
     expect(getGrade("90")).toBe("Score unavailable");
@@ -174,38 +176,68 @@ xdescribe("getStudentSummary() tests", () => {
   });
 
   it("Should return 'My apologies NAME, there's been an error in processing your grade.' if a grade cannot be found", () => {
-    expect(getStudentSummary(120, "John")).toBe("My apologies John, there's been an error in processing your grade.");
-    expect(getStudentSummary(-20, "John")).toBe("My apologies John, there's been an error in processing your grade.");
-    expect(getStudentSummary("70", "John")).toBe("My apologies John, there's been an error in processing your grade.");
+    expect(getStudentSummary(120, "John")).toBe(
+      "My apologies John, there's been an error in processing your grade."
+    );
+    expect(getStudentSummary(-20, "John")).toBe(
+      "My apologies John, there's been an error in processing your grade."
+    );
+    expect(getStudentSummary("70", "John")).toBe(
+      "My apologies John, there's been an error in processing your grade."
+    );
   });
 
   it("Should return the correct summary for a score of over 79", () => {
-    expect(getStudentSummary(100, "John")).toBe("Congratulations John! You achieved a grade of A.");
-    expect(getStudentSummary(80, "Jane")).toBe("Congratulations Jane! You achieved a grade of A.");
+    expect(getStudentSummary(100, "John")).toBe(
+      "Congratulations John! You achieved a grade of A."
+    );
+    expect(getStudentSummary(80, "Jane")).toBe(
+      "Congratulations Jane! You achieved a grade of A."
+    );
   });
 
-  it("Should return the correct summary for a score betweem 79 - 70", () => {
-    expect(getStudentSummary(79, "John")).toBe("Well done John! You achieved a grade of B.");
-    expect(getStudentSummary(70, "Jane")).toBe("Well done Jane! You achieved a grade of B.");
+  it("Should return the correct summary for a score between 79 - 70", () => {
+    expect(getStudentSummary(79, "John")).toBe(
+      "Well done John! You achieved a grade of B."
+    );
+    expect(getStudentSummary(70, "Jane")).toBe(
+      "Well done Jane! You achieved a grade of B."
+    );
   });
 
-  it("Should return the correct summary for a score betweem 69 - 60", () => {
-    expect(getStudentSummary(69, "John")).toBe("Nicely done John! You achieved a grade of C.");
-    expect(getStudentSummary(60, "Jane")).toBe("Nicely done Jane! You achieved a grade of C.");
+  it("Should return the correct summary for a score between 69 - 60", () => {
+    expect(getStudentSummary(69, "John")).toBe(
+      "Nicely done John! You achieved a grade of C."
+    );
+    expect(getStudentSummary(60, "Jane")).toBe(
+      "Nicely done Jane! You achieved a grade of C."
+    );
   });
 
-  it("Should return the correct summary for a score betweem 59 - 50", () => {
-    expect(getStudentSummary(59, "John")).toBe("That's okay John. You achieved a grade of D.");
-    expect(getStudentSummary(50, "Jane")).toBe("That's okay Jane. You achieved a grade of D.");
+  it("Should return the correct summary for a score between 59 - 50", () => {
+    expect(getStudentSummary(59, "John")).toBe(
+      "That's okay John. You achieved a grade of D."
+    );
+    expect(getStudentSummary(50, "Jane")).toBe(
+      "That's okay Jane. You achieved a grade of D."
+    );
   });
 
-  it("Should return the correct summary for a score betweem 49 - 40", () => {
-    expect(getStudentSummary(49, "John")).toBe("Too bad John. You achieved a grade of E.");
-    expect(getStudentSummary(40, "Jane")).toBe("Too bad Jane. You achieved a grade of E.");
+  it("Should return the correct summary for a score between 49 - 40", () => {
+    expect(getStudentSummary(49, "John")).toBe(
+      "Too bad John. You achieved a grade of E."
+    );
+    expect(getStudentSummary(40, "Jane")).toBe(
+      "Too bad Jane. You achieved a grade of E."
+    );
   });
 
-  it("Should return the correct summary for a score betweem 39 - 0", () => {
-    expect(getStudentSummary(39, "John")).toBe("Sorry John. You achieved a grade of F. There's always next year.");
-    expect(getStudentSummary(0, "Jane")).toBe("Sorry Jane. You achieved a grade of F. There's always next year.");
+  it("Should return the correct summary for a score between 39 - 0", () => {
+    expect(getStudentSummary(39, "John")).toBe(
+      "Sorry John. You achieved a grade of F. There's always next year."
+    );
+    expect(getStudentSummary(0, "Jane")).toBe(
+      "Sorry Jane. You achieved a grade of F. There's always next year."
+    );
   });
 });

@@ -1,7 +1,7 @@
 /* JS2 builds on the previous challenges and adds the use of functions with parameters */
 
 /* 
-  All challenges in this repository are seperated into four levels: Foundation, Intermediate, Advanced and Expert.
+  All challenges in this repository are separated into four levels: Foundation, Intermediate, Advanced and Expert.
   The expectation is to complete all Foundation level challenges, with Intermediate and upwards pushing your knowledge
   and may require you to google things in order to solve them. If you find an answer online somewhere, be kind and
   share it with the group!
@@ -17,7 +17,7 @@
  * @returns {string} John Smith
  */
 export const createFullName = (firstName, lastName) => {
-  /* Write your code here */
+  return;
 };
 
 /**
@@ -29,7 +29,7 @@ export const createFullName = (firstName, lastName) => {
  * @returns {number} 100
  */
 export const findSmallestNumber = (/* Write the parameters here */) => {
-  /* Write your code here */
+  return;
 };
 
 /**
@@ -41,7 +41,7 @@ export const findSmallestNumber = (/* Write the parameters here */) => {
  * @returns {number} 18
  */
 export const multiplyNumbers = (/* Write the parameters here */) => {
-  /* Write your code here */
+  return;
 };
 
 /* Intermediate Challenges */
@@ -57,7 +57,7 @@ export const multiplyNumbers = (/* Write the parameters here */) => {
  * @returns {string} "You got a new high score!" | "So close!" | "Better luck next time!"
  */
 export const checkIfNewHighScore = (score, highScore) => {
-  /* Write your code here */
+  return;
 };
 
 /**
@@ -67,7 +67,7 @@ export const checkIfNewHighScore = (score, highScore) => {
  * @returns {string} "15 degrees celsius is 59 degrees fahrenheit"
  */
 export const celsiusToFahrenheit = (tempInCelsius) => {
-  /* Write your code here */
+  return;
 };
 
 /**
@@ -80,7 +80,7 @@ export const celsiusToFahrenheit = (tempInCelsius) => {
  * @returns {number} 47450
  */
 export const calculateLifetimeSupply = (snickersPerDay, age, maxAge) => {
-  /* Write your code here */
+  return;
 };
 
 /* Advanced Challenges */
@@ -100,7 +100,7 @@ export const calculateLifetimeSupply = (snickersPerDay, age, maxAge) => {
  * @returns {string} A - F | Score unavailable
  */
 export const getGrade = (score) => {
-  /* Write your code here */
+  return;
 };
 
 /**
@@ -110,10 +110,10 @@ export const getGrade = (score) => {
  * @returns {number} 28.27
  */
 export const calculateAreaOfCircle = (radius) => {
-  /* Write your code here */
+  return;
 };
 
-/* Expert Challenge */
+/* Expert Challenges */
 
 /**
  * A function that generates a student summary from an inputted score and name, to place at the end of a report card for a student.
@@ -131,5 +131,5 @@ export const calculateAreaOfCircle = (radius) => {
  * @param {string} name John
  */
 export const getStudentSummary = (score, name) => {
-  /* Write your code here */
+  return;
 };

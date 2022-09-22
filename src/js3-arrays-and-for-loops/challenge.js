@@ -3,15 +3,13 @@
  */
 
 /* 
-  All challenges in this repository are seperated into four levels: Foundation, Intermediate, Advanced and Expert.
+  All challenges in this repository are separated into four levels: Foundation, Intermediate, Advanced and Expert.
   The expectation is to complete all Foundation level challenges, with Intermediate and upwards pushing your knowledge
   and may require you to google things in order to solve them. If you find an answer online somewhere, be kind and
   share it with the group!
 */
 
-/**
- * Foundation Challenges
- */
+/* Foundation Challenges */
 
 /**
  * A function that creates a a Recipe string from a given array of Ingredients.
@@ -37,7 +35,7 @@ export const getFirstAndLastItems = (itemsArr) => {
 };
 
 /**
- * A function that takes an array of scores and totals the scores by looping through the array.
+ * A function that takes an array of scores and returns the sum of all scores by looping through the array.
  *
  * @param {number[]} scoreArr [1,2,3]
  * @return {number} 6
@@ -47,9 +45,7 @@ export const totalScores = (scoreArr) => {
   return;
 };
 
-/**
- * Intermediate Challenges
- */
+/* Intermediate Challenges */
 
 /**
  * A function that takes an number and returns the total of the range of numbers between 0 and the given number.
@@ -92,13 +88,11 @@ export const removeEvenNumbers = (numberArr) => {
   return;
 };
 
-/**
- * Advanced Challenges
- */
+/* Advanced Challenges */
 
 /**
  * A function that takes an array of numbers. It returns the average from the given array.
- * The result should rounded up to the nearest decimal place.
+ * The result should be rounded to the nearest whole number.
  *
  * @param {number[]} numberArr [1,2,3]
  * @return {number} 2
@@ -109,7 +103,7 @@ export const generateAverage = (numberArr) => {
 };
 
 /**
- * A function that uses a loop to reverse the order of an Array. It should return a NEW ARRAY and not Mutate the orginal array.
+ * A function that uses a loop to reverse the order of an Array. It should return a NEW ARRAY and not Mutate the original array.
  *
  * @param {number[]} toReverseArr [1,2,3]
  * @return {number} [3,2,1]
@@ -119,12 +113,10 @@ export const reverseOrder = (toReverseArr) => {
   return;
 };
 
-/**
- * Expert Challenges
- */
+/* Expert Challenges */
 
 /**
- * Given two arrays, The first being an array of players and the second being there corresponding score. Loop through them and generate a new array matching the format below.
+ * Given two arrays, The first being an array of players and the second being their corresponding scores. Loop through them and generate a new array matching the format below.
  *
  * ["P:INDEX PLAYER scored HIGHSCORE","P:INDEX PLAYER scored HIGHSCORE","P:INDEX PLAYER scored HIGHSCORE"]
  *
@@ -148,24 +140,20 @@ export const generateHighscores = (playersArr, scoresArr) => {
  * The first three letters will go into their own list.
  * The next three letters will follow this pattern.
  * Joining the first three letters in each of their list.
- * The rest of the letter's will follow this pattern.
+ * The rest of the letters will follow this pattern.
  * Each list will be joined together and returned as an encrypted message.
  *
  * The word "encrypted" would be broken into:
  *
- * e r t
- * n y e
- * c p d
+ * ["e", "r", "t"]
+ * ["n", "y", "e"]
+ * ["c", "p", "d"]
  *
- * and joined together as ert + nye + cpd
+ * and joined together as ert + nye + cpd to give a final string of "ertnyecpd"
  *
  * @param {string} toEncrypt "encrypted"
  * @return {string} "ertnyecpd"
  */
-
-// export const encryptString = (toEncrypt) => {
-//   return;
-// };
 
 export const encryptString = (toEncrypt) => {
   return;

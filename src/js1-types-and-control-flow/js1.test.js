@@ -1,16 +1,14 @@
-import * as challenge from "./challenge";
-
-const {
+import {
+  addNumbers,
+  convertPascalCaseToSnakeCase,
+  convertStringToNumber,
   createFullName,
   findLargestNumber,
-  addNumbers,
   findLengthOfPassword,
   findType,
-  getIsValidOnNameTag,
-  convertStringToNumber,
   getHasUppercaseLetters,
-  convertPascalCaseToSnakeCase
-} = challenge;
+  getIsValidOnNameTag,
+} from "./challenge";
 
 test("createFullName() tests", () => {
   expect(createFullName()).toBeDefined();

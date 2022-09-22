@@ -3,15 +3,13 @@
  */
 
 /* 
-  All challenges in this repository are seperated into four levels: Foundation, Intermediate, Advanced and Expert.
+  All challenges in this repository are separated into four levels: Foundation, Intermediate, Advanced and Expert.
   The expectation is to complete all Foundation level challenges, with Intermediate and upwards pushing your knowledge
   and may require you to google things in order to solve them. If you find an answer online somewhere, be kind and
   share it with the group!
 */
 
-/**
- * Foundation Challenges
- */
+/* Foundation Challenges */
 
 /**
  * A function that uses the REDUCE array iterator to total an array of scores.
@@ -43,20 +41,20 @@ export const reverseString = (toReverse) => {
  * Each character will need to be lowercase.
  * A to Z case insensitive.
  *
- * @param {string[]} charcterArr ["X", "B", "B", "b", "g", "l", "n", "x"]
+ * @param {string[]} characterArr ["X", "B", "B", "b", "g", "l", "n", "x"]
  * @return {string[]} ["b", "b", "b", "g", "l", "n", "x", "x"]
  */
 
-export const sortCharactersAlphabetically = (charcterArr) => {
+export const sortCharactersAlphabetically = (characterArr) => {
   return;
 };
 
-/**
- * Intemediate Challenges
- */
+/* Intermediate Challenges */
 
 /**
- * A function that arranges an array of numbers highest to the lowest number.
+ * A function that takes an array of numbers and returns an array of numbers ordered numerically
+ *
+ * You should do this WITHOUT modifying the original array
  *
  * @param {number[]} numberArr [6, 9, 55, 2, 9190, .5]
  * @return {number[]} [9190, 55, 9, 6, 2, 0.5]
@@ -67,33 +65,20 @@ export const sortNumbersHighToLow = (numberArr) => {
 };
 
 /**
- * A function that checks if a given item is 'instock'.
- * You have been given a 'stocklist' in the function body.
+ * A function that checks if a given item is 'in stock'.
+ * You have been given a 'stock list' in the function body.
  *
- * If the item is in the stocklist you need to return its index in the following string format.
- * "ITEM is instock, it is on aisle INDEX."
+ * If the item is in the stock list you need to return its index in the following string format.
+ * "ITEM is in stock, it is on aisle INDEX."
  *
- * If the item is not in the stocklist you need to return the following string format.
- * "Sorry ITEM is not instock."
+ * If the item is not in the stock list you need to return the following string format.
+ * "Sorry ITEM is not in stock."
  *
  * @param {string} toCheck orange
- * @return {string} "orange is instock, it is on aisle 2."
+ * @return {string} "orange is in stock, it is on aisle 2."
  */
 
-export const checkItemInstock = (toCheck) => {
-  const stockList = [
-    "apple",
-    "banana",
-    "orange",
-    "coconut",
-    "strawberry",
-    "lime",
-    "grapefruit",
-    "lemon",
-    "kumquat",
-    "blueberry",
-    "melon",
-  ];
+export const checkItemInStock = (toCheck) => {
   return;
 };
 
@@ -111,9 +96,7 @@ export const checkPrimaryColours = (coloursArr) => {
   return;
 };
 
-/**
- * Advanced Challenges
- */
+/* Advanced Challenges */
 
 /**
  * A function that takes a strings and checks to see if it is a palindrome.
@@ -142,12 +125,10 @@ export const totalNestedScoresArr = (scoresArr) => {
   return;
 };
 
-/**
- * Expert Challenge
- */
+/* Expert Challenges */
 
 /**
- * This is the same challenge as advanced JS4, can you implement it differently.
+ * This is the same challenge as advanced JS4, can you implement it differently?
  * Can you complete this challenge using the REDUCE iterator?
  *
  * A function that takes a string and creates a simple encrypted message.
@@ -156,16 +137,16 @@ export const totalNestedScoresArr = (scoresArr) => {
  * The first three letters will go into their own list.
  * The next three letters will follow this pattern.
  * Joining the first three letters in each of their list.
- * The rest of the letter's will follow this pattern.
+ * The rest of the letters will follow this pattern.
  * Each list will be joined together and returned as an encrypted message.
  *
  * The word "encrypted" would be broken into:
  *
- * e r t
- * n y e
- * c p d
+ * ["e", "r", "t"]
+ * ["n", "y", "e"]
+ * ["c", "p", "d"]
  *
- * and joined together as ert + nye + cpd
+ * and joined together as ert + nye + cpd to give a final string of "ertnyecpd"
  *
  * @param {string} toEncrypt "encrypted"
  * @return {string} "ertnyecpd"

@@ -3,19 +3,17 @@
  */
 
 /* 
-  All challenges in this repository are seperated into four levels: Foundation, Intermediate, Advanced and Expert.
+  All challenges in this repository are separated into four levels: Foundation, Intermediate, Advanced and Expert.
   The expectation is to complete all Foundation level challenges, with Intermediate and upwards pushing your knowledge
   and may require you to google things in order to solve them. If you find an answer online somewhere, be kind and
   share it with the group!
 */
 
-/**
- * Foundation Challenges
- */
+/* Foundation Challenges */
 
 /**
  * A function that takes an array of Booleans and then removes the false values from the given array.
- * It should create a new array only consiting of the true values.
+ * It should create a new array only consisting of the true values.
  *
  * @param {boolean[]} booleanArr [true, true, false, false, true]
  * @return {boolean[]} [true, true, true]
@@ -26,7 +24,7 @@ export const removeFalseValues = (booleanArr) => {
 };
 
 /**
- * A function that takes an array of numbers that are between 0 - 1.
+ * A function that takes an array of numbers that are between 0 and 1.
  * The function needs to create a new array with the numbers converted into a percentage
  *
  * @param {number[]} numbersArr [1, .5, .7, .25]
@@ -46,13 +44,11 @@ export const createPercentageList = (numbersArr) => {
  * @return {string[]} ["disco shoes", "disco jacket", "disco belt"]
  */
 
-export const createListOfPoessessions = (possessionsArr, name) => {
+export const createListOfPossessions = (possessionsArr, name) => {
   return;
 };
 
-/**
- * Intemediate Challenges
- */
+/* Intermediate Challenges */
 
 /**
  * Have a look at the String method split()
@@ -89,7 +85,7 @@ export const createOddEvenArray = (numberString) => {
 
 /**
  * A function that takes an array of book titles and a search term.
- * The function needs fo remove any book titles that do not include the search term.
+ * The function needs to remove any book titles that do not include the search term.
  *
  * @param {string[]} booksArr ["JavaScript: The Definitive Guide", "JavaScript: The Good Parts", "The Google story", "React for Dummies"]
  * @param {string} - searchTerm - "Google"
@@ -100,16 +96,14 @@ export const filterBooksBySearch = (booksArr, searchTerm) => {
   return;
 };
 
-/**
- * Advanced Challenges
- */
+/* Advanced Challenges */
 
 /**
  * A function that takes a list, cleans each item and joins them with a +.
- * When it "cleans" it remove's whitespace and makes sure the string is lowercase.
+ * When it "cleans" it removes whitespace and makes sure the string is lowercase.
  *
- * This function is failing the test's can you figure out why?
- * The bug is within the function, the test's are fine.
+ * This function is failing the tests can you figure out why?
+ * The bug is within the function, the tests are fine.
  * Can you get it to pass the tests?
  *
  * @param {string[]} stringArr ["  dIsco", " ShOes "]
@@ -121,8 +115,6 @@ export const formatStringArray = (stringArr) => {
     const cleanStr = string.trim().toLowerCase();
     return cleanStr;
   });
-
-  // console.log(???)
 
   const joinedString = cleanedArr.join("+");
 
@@ -147,7 +139,7 @@ export const formatString = (string) => {
 };
 
 /**
- * Expert Challenge
+ * Expert Challenges
  */
 
 /**
@@ -158,7 +150,7 @@ export const formatString = (string) => {
  * If we were given [-1, "disco", "3", 5, "15", 2, 0]
  * We would be left with this ["3", 5, "15", 2]
  *
- * It then needs to create a NEW array from this clean array based on the conditons below:
+ * It then needs to create a NEW array from this clean array based on the conditions below:
  *
  * For multiples of three replace the number with "Fizz".
  * For multiples of five replace the number with "Buzz".

@@ -10,10 +10,6 @@ Students should complete the challenges in their own cloned version of the chall
 
 ```bash
 npm install
-
-OR
-
-yarn install
 ```
 
 ## Running tests
@@ -22,10 +18,6 @@ yarn install
 
 ```bash
 npm test
-
-OR
-
-yarn test
 ```
 
 ### Individual tests
@@ -34,20 +26,12 @@ You can run the tests individually. Do this by specifying the folder as an argum
 
 ```bash
 npm test js1-types-and-control-flow
-
-OR
-
-yarn test js1-types-and-control-flow
 ```
 
-You can also ommit the file name after the first -, example below.
+You can also omit the file name after the first -, example below.
 
 ```bash
 npm test js1-
-
-OR
-
-yarn test js1-
 ```
 
 ### Run tests on save
@@ -56,10 +40,6 @@ You can "watch" the code so that tests run automatically on save the same you ru
 
 ```bash
 npm run test-watch js1-
-
-OR
-
-yarn test-watch js1-
 ```
 
 ### Unskipping tests

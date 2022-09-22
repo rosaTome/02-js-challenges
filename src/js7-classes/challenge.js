@@ -2,15 +2,13 @@
  */
 
 /* 
-  All challenges in this repository are seperated into four levels: Foundation, Intermediate, Advanced and Expert.
+  All challenges in this repository are separated into four levels: Foundation, Intermediate, Advanced and Expert.
   The expectation is to complete all Foundation level challenges, with Intermediate and upwards pushing your knowledge
   and may require you to google things in order to solve them. If you find an answer online somewhere, be kind and
   share it with the group!
 */
 
-/**
- * Foundation Challenges
- */
+/* Foundation Challenges */
 
 /**
  * Complete the Skeleton of a Coordinate Class below.
@@ -96,9 +94,7 @@ export class Loader {
   removeLoader() {}
 }
 
-/**
- * Intemediate Challenges
- */
+/* Intermediate Challenges */
 
 /**
  * Complete the Skeleton of a Counter Class below.
@@ -170,7 +166,7 @@ export class Engine {
   constructor() {}
 
   /**
-   * Updates engineIsRunning to true and returns a conditonal string based if the engine is already running.
+   * Updates engineIsRunning to true and returns a conditional string based if the engine is already running.
    * @return {string} "Engine has started running" or "Engine is already running"
    */
   startEngine() {
@@ -178,7 +174,7 @@ export class Engine {
   }
 
   /**
-   * Updates engineIsRunning to false and returns a conditonal string based if the engine has already stopped.
+   * Updates engineIsRunning to false and returns a conditional string based if the engine has already stopped.
    * @return {string} "Engine has stopped running" or "Engine has already stopped running"
    */
   stopEngine() {
@@ -208,7 +204,7 @@ export class Engine {
  * </div>
  *
  * MODAL-TITLE will be the title key from the class.
- * MODAL-MESSAGE will be the mesage key from the class.
+ * MODAL-MESSAGE will be the message key from the class.
  *
  * The second will need to be called displayModal().
  * This method when called will go into the htmlRef, then into the classList and use the toggle method.
@@ -239,9 +235,7 @@ export class Modal {
   // WRITE DISPLAY MODAL METHOD HERE
 }
 
-/**
- * Advanced Challenges
- */
+/* Advanced Challenges */
 
 /**
  * Complete the Skeleton of a BookShelf Class below.
@@ -313,16 +307,14 @@ export class BookShelf {
   // WRITE ADD BOOK TO SHELF SETTER HERE
 }
 
-/**
- * Expert Challenge
- */
+/* Expert Challenges */
 
 /**
  * Complete the Skeleton of a BankAccount Class below.
  *
  * You will need to write the constructor.
  * It needs to accept three parameters called name, email and balance.
- * By defualt the balance will be set to 0 unless a balance is given.
+ * By default the balance will be set to 0 unless a balance is given.
  * The balance key is private so will need to be prefixed with a "_"
  * The keys will need to be called name, email and _balance.
  *
@@ -334,7 +326,7 @@ export class BookShelf {
  * You will need to write two methods.
  *
  * The first needs to be called deposit().
- * It will need to accempt a parameter which is the amount to deposit.
+ * It will need to accept a parameter which is the amount to deposit.
  * This parameter can either be a number (2), a number as a string ("2"), or something else ("cheese")
  * You will have to handle this in the function.
  * You will need to handle negative numbers.
@@ -344,7 +336,7 @@ export class BookShelf {
  * If it is a negative number or something else the function need to return this "Invalid input, unable to deposit".
  *
  * The second needs to be called withdraw().
- * It will need to accempt a parameter which is the amount to withdraw.
+ * It will need to accept a parameter which is the amount to withdraw.
  * This parameter can either be a number (2), a number as a string ("2"), or something else ("cheese")
  * You will have to handle this in the function.
  * You will need to handle negative numbers.
