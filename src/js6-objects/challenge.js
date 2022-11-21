@@ -74,7 +74,7 @@ export const setUserName = (user, username) => {
  * @param {{fullName: string,}} customer A customer object from the database
  * @returns {{fullName: string, firstName: string, lastName: string}} A customer object from the database with the name separated into first and last
  */
-export const splitFullNameToFirstAndLast = ({ fullName }) => {
+export const splitFullNameToFirstAndLast = (customer) => {
   return;
 };
 
