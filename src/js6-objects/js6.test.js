@@ -10,7 +10,7 @@ import {
   splitFullNameToFirstAndLast,
 } from "./challenge";
 
-// REMOVE X FROM DESCRIBE FUNCTION TO STOP SKIPPING TEST BLOCKS
+// REMOVE .skip FROM describe FUNCTION TO STOP SKIPPING TEST BLOCKS
 
 describe("getFurniturePrice() tests", () => {
   const table = { name: "lack", price: 6 };
@@ -22,7 +22,7 @@ describe("getFurniturePrice() tests", () => {
   });
 });
 
-xdescribe("addFurnitureStorLocation() tests", () => {
+describe.skip("addFurnitureStorLocation() tests", () => {
   const table = { name: "lack", price: 6 };
   const cabinet = { name: "brimnes", price: 55 };
 
@@ -59,11 +59,9 @@ xdescribe("addFurnitureStorLocation() tests", () => {
   });
 });
 
-xdescribe("makeSpaceship() tests", () => {
+describe.skip("makeSpaceship() tests", () => {
   it("Should return an object", () => {
-    expect(typeof makeSpaceship("rocinante", 8, "epstein drive", true)).toBe(
-      "object"
-    );
+    expect(typeof makeSpaceship("rocinante", 8, "epstein drive", true)).toBe("object");
   });
 
   const rocinante = {
@@ -79,16 +77,12 @@ xdescribe("makeSpaceship() tests", () => {
     canTravelSolarSystems: true,
   };
   it("Should create an object with the provided arguments as values", () => {
-    expect(makeSpaceship("rocinante", 8, "epstein drive", true)).toStrictEqual(
-      rocinante
-    );
-    expect(
-      makeSpaceship("uss enterprise (ncc-1701-d)", 5, "impulse drive", true)
-    ).toStrictEqual(enterprise);
+    expect(makeSpaceship("rocinante", 8, "epstein drive", true)).toStrictEqual(rocinante);
+    expect(makeSpaceship("uss enterprise (ncc-1701-d)", 5, "impulse drive", true)).toStrictEqual(enterprise);
   });
 });
 
-xdescribe("setUserName() tests", () => {
+describe.skip("setUserName() tests", () => {
   const user1 = { name: "john smith", username: "johnnyboiii" };
   const user2 = { name: "jane doe", username: "killerZ" };
   it("Should return and object", () => {
@@ -118,7 +112,7 @@ xdescribe("setUserName() tests", () => {
   });
 });
 
-xdescribe("splitFullNameToFirstAndLast() tests", () => {
+describe.skip("splitFullNameToFirstAndLast() tests", () => {
   const customer1 = { fullName: "Barry Chuckle" };
   const customer2 = { fullName: "Paul Chuckle" };
 
@@ -137,7 +131,7 @@ xdescribe("splitFullNameToFirstAndLast() tests", () => {
   });
 });
 
-xdescribe("accessGivenKey() tests", () => {
+describe.skip("accessGivenKey() tests", () => {
   const person = {
     name: "Joe Bloggs",
     height: 170,
@@ -162,7 +156,7 @@ xdescribe("accessGivenKey() tests", () => {
   });
 });
 
-xdescribe("getUserAddress() tests", () => {
+describe.skip("getUserAddress() tests", () => {
   const user1 = {
     id: 101,
     name: "Harry Potter",
@@ -186,14 +180,12 @@ xdescribe("getUserAddress() tests", () => {
   };
 
   it("Should be able to get the address from the user object", () => {
-    expect(getUserAddress(user1)).toBe(
-      "4 Privet Drive Little Whinging Surrey CR3 0AA"
-    );
+    expect(getUserAddress(user1)).toBe("4 Privet Drive Little Whinging Surrey CR3 0AA");
     expect(getUserAddress(user2)).toBe("32 Windsor Gardens London W9 3RG");
   });
 });
 
-xdescribe("setSafeAllergens() tests", () => {
+describe.skip("setSafeAllergens() tests", () => {
   const allergenList = [
     "celery",
     "gluten",
@@ -218,9 +210,7 @@ xdescribe("setSafeAllergens() tests", () => {
   };
 
   it("Should include all allergens as safe if none present on the object allergies array", () => {
-    expect(
-      setSafeAllergens(customer1, allergenList).safeAllergens
-    ).toStrictEqual([
+    expect(setSafeAllergens(customer1, allergenList).safeAllergens).toStrictEqual([
       "celery",
       "gluten",
       "crustaceans",
@@ -260,30 +250,17 @@ xdescribe("setSafeAllergens() tests", () => {
   };
 
   it("Should include no allergens if all are found on the customer object", () => {
-    expect(
-      setSafeAllergens(customer2, allergenList).safeAllergens
-    ).toStrictEqual([]);
+    expect(setSafeAllergens(customer2, allergenList).safeAllergens).toStrictEqual([]);
   });
 
   const customer3 = {
     id: 105,
     name: "Mandy Manderson",
-    allergies: [
-      "eggs",
-      "fish",
-      "lupin",
-      "molluscs",
-      "mustard",
-      "sesame",
-      "soybeans",
-      "sulphites",
-    ],
+    allergies: ["eggs", "fish", "lupin", "molluscs", "mustard", "sesame", "soybeans", "sulphites"],
   };
 
   it("Should include some allergens if some are present on customer allergen list", () => {
-    expect(
-      setSafeAllergens(customer3, allergenList).safeAllergens
-    ).toStrictEqual([
+    expect(setSafeAllergens(customer3, allergenList).safeAllergens).toStrictEqual([
       "celery",
       "gluten",
       "crustaceans",
@@ -294,7 +271,7 @@ xdescribe("setSafeAllergens() tests", () => {
   });
 });
 
-xdescribe("mergeFurniture() tests", () => {
+describe.skip("mergeFurniture() tests", () => {
   const tableLocationInfo = { id: 101, location: "Bristol", sku: "bXpGsZC2j4" };
   const tableProductInfo = {
     id: 101,

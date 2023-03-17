@@ -11,7 +11,7 @@ import {
   totalScores,
 } from "./challenge";
 
-// REMOVE X FROM DESCRIBE FUNCTION TO STOP SKIPPING TEST BLOCKS
+// REMOVE .skip FROM describe FUNCTION TO STOP SKIPPING TEST BLOCKS
 
 const coaches = ["Andy", "Bex", "Calum", "Charlie", "Matt", "Ollie", "Sam"];
 const items = ["Apple", "Orange", "Pear"];
@@ -40,7 +40,7 @@ describe("Testing createRecipeString()", () => {
   });
 });
 
-xdescribe("Testing getFirstAndLastItems()", () => {
+describe.skip("Testing getFirstAndLastItems()", () => {
   it("Should be defined", () => {
     expect(getFirstAndLastItems(coaches)).toBeDefined();
   });
@@ -55,7 +55,7 @@ xdescribe("Testing getFirstAndLastItems()", () => {
   });
 });
 
-xdescribe("Testing totalScores()", () => {
+describe.skip("Testing totalScores()", () => {
   it("Should be defined", () => {
     expect(totalScores(scores)).toBeDefined();
   });
@@ -78,7 +78,7 @@ xdescribe("Testing totalScores()", () => {
   });
 });
 
-xdescribe("Testing totalRange()", () => {
+describe.skip("Testing totalRange()", () => {
   it("Should be defined", () => {
     expect(totalRange(10)).toBeDefined();
   });
@@ -99,7 +99,7 @@ xdescribe("Testing totalRange()", () => {
   });
 });
 
-xdescribe("Testing moveFirstAndLastItems()", () => {
+describe.skip("Testing moveFirstAndLastItems()", () => {
   it("Should be defined", () => {
     expect(moveFirstAndLastItems(items)).toBeDefined();
   });
@@ -110,15 +110,11 @@ xdescribe("Testing moveFirstAndLastItems()", () => {
 
   it("Should handle multiple inputs", () => {
     expect(moveFirstAndLastItems(items)).toEqual(["Pear", "Apple", "Orange"]);
-    expect(moveFirstAndLastItems(ingredients)).toEqual([
-      "Tomato",
-      "Bacon",
-      "Lettuce",
-    ]);
+    expect(moveFirstAndLastItems(ingredients)).toEqual(["Tomato", "Bacon", "Lettuce"]);
   });
 });
 
-xdescribe("Testing removeEvenNumbers()", () => {
+describe.skip("Testing removeEvenNumbers()", () => {
   it("Should be defined", () => {
     expect(removeEvenNumbers(scores)).toBeDefined();
   });
@@ -150,7 +146,7 @@ xdescribe("Testing removeEvenNumbers()", () => {
   });
 });
 
-xdescribe("Testing generateAverage()", () => {
+describe.skip("Testing generateAverage()", () => {
   it("Should be defined", () => {
     expect(generateAverage([10])).toBeDefined();
   });
@@ -176,7 +172,7 @@ xdescribe("Testing generateAverage()", () => {
   });
 });
 
-xdescribe("Testing reverseOrder()", () => {
+describe.skip("Testing reverseOrder()", () => {
   it("Should be defined", () => {
     expect(reverseOrder(items)).toBeDefined();
   });
@@ -204,16 +200,12 @@ xdescribe("Testing reverseOrder()", () => {
   });
 });
 
-xdescribe("Testing generateHighscores()", () => {
+describe.skip("Testing generateHighscores()", () => {
   let players, playerScores, highscores;
   beforeEach(() => {
     players = ["Andy", "Bex", "Calum"];
     playerScores = [60, 99, 71];
-    highscores = [
-      "P:1 Andy scored 60",
-      "P:2 Bex scored 99",
-      "P:3 Calum scored 71",
-    ];
+    highscores = ["P:1 Andy scored 60", "P:2 Bex scored 99", "P:3 Calum scored 71"];
   });
 
   it("Should be defined", () => {
@@ -221,9 +213,7 @@ xdescribe("Testing generateHighscores()", () => {
   });
 
   it("Should return an Array with correct params", () => {
-    expect(
-      Array.isArray(generateHighscores(players, playerScores))
-    ).toBeTruthy();
+    expect(Array.isArray(generateHighscores(players, playerScores))).toBeTruthy();
   });
 
   it("Should return String with incorrect params", () => {
@@ -240,9 +230,7 @@ xdescribe("Testing generateHighscores()", () => {
   });
 
   it("Should not lose any players", () => {
-    expect(
-      generateHighscores(Array(10).fill("A"), Array(10).fill(1)).length
-    ).toBe(10);
+    expect(generateHighscores(Array(10).fill("A"), Array(10).fill(1)).length).toBe(10);
   });
 
   it("Should catch invalid parameters.", () => {
@@ -258,7 +246,7 @@ xdescribe("Testing generateHighscores()", () => {
   });
 });
 
-xdescribe("Testing encryptString()", () => {
+describe.skip("Testing encryptString()", () => {
   it("Should NOT return undefined", () => {
     expect(encryptString("  defined")).toBeDefined();
   });
@@ -279,12 +267,8 @@ xdescribe("Testing encryptString()", () => {
   });
 
   it("Should encrypt large words", () => {
-    expect(encryptString("antidisestablishmentarianism")).toBe(
-      "aistlhnrnmndeaimtiitisbseaas"
-    );
-    expect(encryptString("hippopotomonstrosesquippedaliophobia")).toBe(
-      "hpomsosielpbiototsqpdihipponreupaooa"
-    );
+    expect(encryptString("antidisestablishmentarianism")).toBe("aistlhnrnmndeaimtiitisbseaas");
+    expect(encryptString("hippopotomonstrosesquippedaliophobia")).toBe("hpomsosielpbiototsqpdihipponreupaooa");
   });
 
   it("Should keep spaces between words", () => {
