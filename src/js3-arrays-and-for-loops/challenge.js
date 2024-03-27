@@ -20,7 +20,14 @@
  */
 
 export const createRecipeString = (ingredientsArr) => {
-  return;
+  let recipeString = '';
+  for (let i = 0; i < ingredientsArr.length; i++) {
+    recipeString += ingredientsArr[i];
+    if (i !== ingredientsArr.length - 1) {
+      recipeString += '+';
+    }
+  }
+  return recipeString;
 };
 
 /**
@@ -31,7 +38,12 @@ export const createRecipeString = (ingredientsArr) => {
  */
 
 export const getFirstAndLastItems = (itemsArr) => {
-  return;
+
+  if (itemsArr.length < 2) {
+    return itemsArr;
+  }
+
+  return [itemsArr[0], itemsArr[itemsArr.length - 1]];
 };
 
 /**
@@ -41,9 +53,19 @@ export const getFirstAndLastItems = (itemsArr) => {
  * @return {number} 6
  */
 
+// function
 export const totalScores = (scoreArr) => {
-  return;
+  let sum = 0;
+
+  // loop
+  for (let i = 0; i < scoreArr.length; i++) {
+    sum += scoreArr[i];
+  }
+
+  return sum;
 };
+const scores = [1, 2, 3];
+console.log(totalScores(scores));
 
 /* Intermediate Challenges */
 
@@ -56,7 +78,11 @@ export const totalScores = (scoreArr) => {
  */
 
 export const totalRange = (rangeMax) => {
-  return;
+  let sum = 0;
+  for (let i = 0; i <= rangeMax; i++) {
+    sum += i;
+  }
+  return sum;
 };
 
 /**
@@ -67,6 +93,8 @@ export const totalRange = (rangeMax) => {
  */
 
 export const moveFirstAndLastItems = (itemsArr) => {
+
+  
   return;
 };
 

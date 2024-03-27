@@ -10,7 +10,7 @@ import {
   removeFalseValues,
 } from "./challenge";
 
-// REMOVE .skip FROM describe FUNCTION TO STOP SKIPPING TEST BLOCKS
+// REMOVE  FROM describe FUNCTION TO STOP SKIPPING TEST BLOCKS
 
 const mixedBooleanArr = [true, false, false, true, false, true, true];
 const toBePercentages = [1, 0.5, 0.25, 0.4, 0.99, 0.1];
@@ -45,7 +45,7 @@ describe("Testing removeFalseValues()", () => {
   });
 });
 
-describe.skip("Testing createPercentageList()", () => {
+describe("Testing createPercentageList()", () => {
   it("Should return an array", () => {
     expect(Array.isArray(createPercentageList(toBePercentages))).toBe(true);
   });
@@ -66,7 +66,7 @@ describe.skip("Testing createPercentageList()", () => {
   });
 });
 
-describe.skip("Testing createListOfPossessions()", () => {
+describe("Testing createListOfPossessions()", () => {
   it("Should return an array", () => {
     expect(Array.isArray(createListOfPossessions(possessions, "Matt's"))).toBe(true);
   });
@@ -91,7 +91,7 @@ describe.skip("Testing createListOfPossessions()", () => {
   });
 });
 
-describe.skip("Testing convertStringToNumbersArray()", () => {
+describe("Testing convertStringToNumbersArray()", () => {
   it("Should return an array", () => {
     expect(Array.isArray(convertStringToNumbersArray(numbersCSV))).toBe(true);
   });
@@ -117,7 +117,7 @@ describe.skip("Testing convertStringToNumbersArray()", () => {
   });
 });
 
-describe.skip("Testing createOddEvenArray()", () => {
+describe("Testing createOddEvenArray()", () => {
   it("Should return an array", () => {
     expect(Array.isArray(createOddEvenArray(numbersCSV))).toBe(true);
   });
@@ -143,7 +143,7 @@ describe.skip("Testing createOddEvenArray()", () => {
   });
 });
 
-describe.skip("Testing filterBooksBySearch()", () => {
+describe("Testing filterBooksBySearch()", () => {
   it("Should return an array", () => {
     expect(Array.isArray(filterBooksBySearch(["one thing"], "one thing"))).toBe(true);
   });
@@ -182,7 +182,7 @@ describe.skip("Testing filterBooksBySearch()", () => {
   });
 });
 
-describe.skip("Testing formatStringArray()", () => {
+describe("Testing formatStringArray()", () => {
   it("Should return a String", () => {
     expect(typeof formatStringArray(["  front"])).toBe("string");
   });
@@ -212,7 +212,7 @@ describe.skip("Testing formatStringArray()", () => {
   });
 });
 
-describe.skip("Testing formatString()", () => {
+describe("Testing formatString()", () => {
   it("Should NOT return undefined", () => {
     expect(formatString("  defined")).toBeDefined();
   });
@@ -261,7 +261,7 @@ describe.skip("Testing formatString()", () => {
   });
 });
 
-describe.skip("Testing fizzBuzz()", () => {
+describe("Testing fizzBuzz()", () => {
   const cleanArray = Array(50)
     .fill(0)
     .map((_, index) => index + 1);

@@ -20,8 +20,10 @@
  */
 
 export const removeFalseValues = (booleanArr) => {
-  return;
+  return booleanArr.filter(value => value === true)
 };
+
+console.log(removeFalseValues([true, true, false, false, true]));
 
 /**
  * A function that takes an array of numbers that are between 0 and 1.
@@ -32,8 +34,10 @@ export const removeFalseValues = (booleanArr) => {
  */
 
 export const createPercentageList = (numbersArr) => {
-  return;
+  return numbersArr.map(number => `${Math.round(number * 100) }%`);
 };
+
+console.log(createPercentageList([1, .5, .7, .25]));
 
 /**
  * A function that takes an array of possessions and a name.
@@ -45,8 +49,10 @@ export const createPercentageList = (numbersArr) => {
  */
 
 export const createListOfPossessions = (possessionsArr, name) => {
-  return;
+  return possessionsArr
+  .map(item => `${name} ${item}`);
 };
+console.log(createListOfPossessions(["shoes", "jacket", "belt"], "disco"));
 
 /* Intermediate Challenges */
 
@@ -68,8 +74,12 @@ export const createListOfPossessions = (possessionsArr, name) => {
  */
 
 export const convertStringToNumbersArray = (numberString) => {
-  return;
+  return numberString
+  .split('+')
+  .map(Number);
 };
+
+console.log(convertStringToNumbersArray("1+2+3+4+5"));
 
 /**
  * A function that takes a string of numbers joined with a "+" and creates a new array based on if the number is even or odd.

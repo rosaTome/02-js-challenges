@@ -10,7 +10,7 @@ import {
   multiplyNumbers,
 } from "./challenge";
 
-// REMOVE .skip FROM describe FUNCTION TO STOP SKIPPING TEST BLOCKS
+// REMOVE   FROM describe FUNCTION TO STOP SKIPPING TEST BLOCKS
 
 describe("createFullName() tests", () => {
   it("Should have a return", () => {
@@ -26,7 +26,7 @@ describe("createFullName() tests", () => {
   });
 });
 
-describe.skip("findSmallestNumber() tests", () => {
+describe("findSmallestNumber() tests", () => {
   it("Should have a return", () => {
     expect(findSmallestNumber(100, 200)).toBeDefined();
   });
@@ -41,7 +41,7 @@ describe.skip("findSmallestNumber() tests", () => {
   });
 });
 
-describe.skip("multiplyNumbers() tests", () => {
+describe("multiplyNumbers() tests", () => {
   it("Should have a return", () => {
     expect(multiplyNumbers(2, 6)).toBeDefined();
   });
@@ -55,7 +55,7 @@ describe.skip("multiplyNumbers() tests", () => {
   });
 });
 
-describe.skip("checkIfNewHighScore() tests", () => {
+describe("checkIfNewHighScore() tests", () => {
   it("Should have a return", () => {
     expect(checkIfNewHighScore(300, 325)).toBeDefined();
   });
@@ -73,7 +73,7 @@ describe.skip("checkIfNewHighScore() tests", () => {
   });
 });
 
-describe.skip("celsiusToFahrenheit() tests", () => {
+describe("celsiusToFahrenheit() tests", () => {
   it("Should have a return", () => {
     expect(celsiusToFahrenheit(15)).toBeDefined();
   });
@@ -87,7 +87,7 @@ describe.skip("celsiusToFahrenheit() tests", () => {
   });
 });
 
-describe.skip("calculateLifeTimeSupply() tests", () => {
+describe("calculateLifeTimeSupply() tests", () => {
   it("Should have a return", () => {
     expect(calculateLifetimeSupply(2, 25, 90)).toBeDefined();
   });
@@ -101,7 +101,7 @@ describe.skip("calculateLifeTimeSupply() tests", () => {
   });
 });
 
-describe.skip("getGrade() tests", () => {
+describe("getGrade() tests", () => {
   it("Should have a return", () => {
     expect(getGrade(70)).toBeDefined();
   });
@@ -144,7 +144,7 @@ describe.skip("getGrade() tests", () => {
   });
 });
 
-describe.skip("calculateAreaOfCircle() tests", () => {
+describe("calculateAreaOfCircle() tests", () => {
   it("Should have a return", () => {
     expect(calculateAreaOfCircle(3)).toBeDefined();
   });
@@ -164,7 +164,7 @@ describe.skip("calculateAreaOfCircle() tests", () => {
   });
 });
 
-describe.skip("getStudentSummary() tests", () => {
+describe("getStudentSummary() tests", () => {
   it("Should have a return", () => {
     expect(getStudentSummary(70, "John")).toBeDefined();
   });

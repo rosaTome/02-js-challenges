@@ -19,7 +19,7 @@ const firstName = "John";
 const lastName = "Smith";
 
 export const createFullName = () => {
-  // Write your code here
+    return firstName + " " + lastName
 };
 
 /**
@@ -32,7 +32,7 @@ const largeNumber1 = 100;
 const largeNumber2 = 200;
 
 export const findLargestNumber = () => {
-  // Write your code here
+  return Math.max(largeNumber1, largeNumber2);
 };
 
 /**
@@ -45,7 +45,7 @@ const addNumber1 = 12;
 const addNumber2 = 24;
 
 export const addNumbers = () => {
-  // Write your code here
+  return addNumber1 + addNumber2
 };
 
 /* Intermediate Challenges */
@@ -59,7 +59,7 @@ export const addNumbers = () => {
 const password = "thisIsMyVeryLongPassword123456789";
 
 export const findLengthOfPassword = () => {
-  // Write your code here
+  return password.length
 };
 
 /**
@@ -72,10 +72,29 @@ export const findLengthOfPassword = () => {
  *
  * @returns {string} This is a string
  */
+
+// cont var names 'thing' and init with string value
 const thing = "I am a thing";
 
+// arrow function named findType 
 export const findType = () => {
-  // Write your code here
+
+  // the typeof operator  to determine the type of the 'thing' var and store in 'type' var 
+  const type = typeof thing;
+
+  // switch statement used to check the value of the 'type'
+  switch (type) {
+    case "string":
+      return "This is a string";
+    case "number":
+      return "This is a number";
+    case "boolean":
+      return "This is a boolean";
+    default:
+      return "I don't know what this thing is"
+  }
+
+  // if statement 
 };
 
 /**
@@ -87,8 +106,15 @@ export const findType = () => {
  */
 const nameTagOption = "Timothy";
 
+// name must be less or equal to less than 8, first letter needs to be a capital - checking the first letter and comparing to the capitalised version to it, if both these things are met it returns true, if not it returns false 
 export const getIsValidOnNameTag = () => {
-  // Write your code here
+
+  // name tagoption.toupercase and then return true 
+  if (nameTagOption.length <= 8 && nameTagOption[0] == nameTagOption[0].toUpperCase()){
+    return true
+  } else {
+    return false 
+  }
 };
 
 /* Advanced Challenges */
@@ -102,7 +128,9 @@ export const getIsValidOnNameTag = () => {
 const stringToConvert = "14.45";
 
 export const convertStringToNumber = () => {
-  // Write your code here
+
+  // class - wrapper class object - turn whatever inside this number function from string into a number 
+  return Number (stringToConvert)
 };
 
 /**

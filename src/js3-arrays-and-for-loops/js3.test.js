@@ -11,7 +11,7 @@ import {
   totalScores,
 } from "./challenge";
 
-// REMOVE .skip FROM describe FUNCTION TO STOP SKIPPING TEST BLOCKS
+// REMOVE  FROM describe FUNCTION TO STOP SKIPPING TEST BLOCKS
 
 const coaches = ["Andy", "Bex", "Calum", "Charlie", "Matt", "Ollie", "Sam"];
 const items = ["Apple", "Orange", "Pear"];
@@ -40,7 +40,7 @@ describe("Testing createRecipeString()", () => {
   });
 });
 
-describe.skip("Testing getFirstAndLastItems()", () => {
+describe("Testing getFirstAndLastItems()", () => {
   it("Should be defined", () => {
     expect(getFirstAndLastItems(coaches)).toBeDefined();
   });
@@ -55,7 +55,7 @@ describe.skip("Testing getFirstAndLastItems()", () => {
   });
 });
 
-describe.skip("Testing totalScores()", () => {
+describe("Testing totalScores()", () => {
   it("Should be defined", () => {
     expect(totalScores(scores)).toBeDefined();
   });
@@ -78,7 +78,7 @@ describe.skip("Testing totalScores()", () => {
   });
 });
 
-describe.skip("Testing totalRange()", () => {
+describe("Testing totalRange()", () => {
   it("Should be defined", () => {
     expect(totalRange(10)).toBeDefined();
   });
@@ -99,7 +99,7 @@ describe.skip("Testing totalRange()", () => {
   });
 });
 
-describe.skip("Testing moveFirstAndLastItems()", () => {
+describe("Testing moveFirstAndLastItems()", () => {
   it("Should be defined", () => {
     expect(moveFirstAndLastItems(items)).toBeDefined();
   });
@@ -114,7 +114,7 @@ describe.skip("Testing moveFirstAndLastItems()", () => {
   });
 });
 
-describe.skip("Testing removeEvenNumbers()", () => {
+describe("Testing removeEvenNumbers()", () => {
   it("Should be defined", () => {
     expect(removeEvenNumbers(scores)).toBeDefined();
   });
@@ -146,7 +146,7 @@ describe.skip("Testing removeEvenNumbers()", () => {
   });
 });
 
-describe.skip("Testing generateAverage()", () => {
+describe("Testing generateAverage()", () => {
   it("Should be defined", () => {
     expect(generateAverage([10])).toBeDefined();
   });
@@ -172,7 +172,7 @@ describe.skip("Testing generateAverage()", () => {
   });
 });
 
-describe.skip("Testing reverseOrder()", () => {
+describe("Testing reverseOrder()", () => {
   it("Should be defined", () => {
     expect(reverseOrder(items)).toBeDefined();
   });
@@ -200,7 +200,7 @@ describe.skip("Testing reverseOrder()", () => {
   });
 });
 
-describe.skip("Testing generateHighscores()", () => {
+describe("Testing generateHighscores()", () => {
   let players, playerScores, highscores;
   beforeEach(() => {
     players = ["Andy", "Bex", "Calum"];
@@ -246,7 +246,7 @@ describe.skip("Testing generateHighscores()", () => {
   });
 });
 
-describe.skip("Testing encryptString()", () => {
+describe("Testing encryptString()", () => {
   it("Should NOT return undefined", () => {
     expect(encryptString("  defined")).toBeDefined();
   });
