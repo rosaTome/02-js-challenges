@@ -19,14 +19,9 @@
  * @return {string} "Bacon+Lettuce+Tomato"
  */
 
+// function - creates a recipe string from array 
 export const createRecipeString = (ingredientsArr) => {
-  let recipeString = '';
-  for (let i = 0; i < ingredientsArr.length; i++) {
-    recipeString += ingredientsArr[i];
-    if (i !== ingredientsArr.length - 1) {
-      recipeString += '+';
-    }
-  }
+  const recipeString = ingredientsArr.join("+");
   return recipeString;
 };
 
@@ -36,14 +31,11 @@ export const createRecipeString = (ingredientsArr) => {
  * @param {string[]} itemsArr ["Tony","John","Dave"]
  * @return {string[]} ["Tony","Dave"]
  */
-
+// function - takes array, returns a new array with the first and last 
 export const getFirstAndLastItems = (itemsArr) => {
-
-  if (itemsArr.length < 2) {
-    return itemsArr;
-  }
-
-  return [itemsArr[0], itemsArr[itemsArr.length - 1]];
+  const first = itemsArr[0];
+  const last = itemsArr[itemsArr.length - 1];
+  return [first, last];
 };
 
 /**
@@ -64,8 +56,6 @@ export const totalScores = (scoreArr) => {
 
   return sum;
 };
-const scores = [1, 2, 3];
-console.log(totalScores(scores));
 
 /* Intermediate Challenges */
 
@@ -92,11 +82,20 @@ export const totalRange = (rangeMax) => {
  * @return {string[]} ["Dave","Tony","John"]
  */
 
+// function 
 export const moveFirstAndLastItems = (itemsArr) => {
 
-  
-  return;
+  // takes an array 
+  const result = [...itemsArr];
+
+  // new array where the last item has been moved to the front of the array and removed from the back 
+  const lastItem = result.pop();
+  result.unshift(lastItem);
+
+  return result;
 };
+
+// console.log(itemsArr.pop(itemsArr[itemsArr.length - 1]), itemsArr.unshift(itemsArr[itemsArr.length - 1]));
 
 /**
  * Read this article on how to clone an array.
@@ -113,8 +112,13 @@ export const moveFirstAndLastItems = (itemsArr) => {
  */
 
 export const removeEvenNumbers = (numberArr) => {
-  return;
+  const numberArrTwo = [...numberArr];
+  return numberArrTwo.filter (num => num % 2 !== 0);
 };
+
+const numberArr = [1,1,8,1,1,8];
+const oddNumbers = removeEvenNumbers(numberArr);
+console.log(oddNumbers);
 
 /* Advanced Challenges */
 
@@ -126,9 +130,14 @@ export const removeEvenNumbers = (numberArr) => {
  * @return {number} 2
  */
 
+// function
 export const generateAverage = (numberArr) => {
-  return;
+  const total = totalScores(numberArr);
+  const average = total / numberArr.length;
+  return Math.round(average) || 0;
 };
+
+
 
 /**
  * A function that uses a loop to reverse the order of an Array. It should return a NEW ARRAY and not Mutate the original array.
@@ -137,9 +146,15 @@ export const generateAverage = (numberArr) => {
  * @return {number} [3,2,1]
  */
 
+// function 
 export const reverseOrder = (toReverseArr) => {
-  return;
+  const reversed = [];
+  for (let i = toReverseArr.length - 1; i >= 0; i--) {
+    reversed.push(toReverseArr[i]);
+  }
+  return reversed;
 };
+
 
 /* Expert Challenges */
 
@@ -157,9 +172,22 @@ export const reverseOrder = (toReverseArr) => {
  * @return {string[]} ["P:1 Tony scored 45","P:2 John scored 55","P:3 Dave scored 66"]
  */
 
+// function w/ two arrays 
 export const generateHighscores = (playersArr, scoresArr) => {
-  return;
+  if (playersArr.length !== scoresArr.length || !playersArr.length)
+    return "invalid inputs";
+  const scores = [];
+  while (scores.length !== playersArr.length) {
+    const index = scores.length;
+    const message = `P:${index + 1} ${playersArr[index]} scored ${
+      scoresArr[index]
+    }`;
+    scores.push(message);
+  }
+
+  return scores;
 };
+
 
 /**
  * A function that takes a string and creates a simple encrypted message.
@@ -183,6 +211,15 @@ export const generateHighscores = (playersArr, scoresArr) => {
  * @return {string} "ertnyecpd"
  */
 
+// function - takes string and return encrypted message
 export const encryptString = (toEncrypt) => {
-  return;
+  const encryptArray = [[], [], []];
+
+  for (let i = 0; i < toEncrypt.length; i++) {
+    const placementIndex = i % 3;
+    const letter = toEncrypt[i];
+    encryptArray[placementIndex].push(letter);
+  }
+  return encryptArray.flat().join("");
 };
+
