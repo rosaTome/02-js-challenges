@@ -48,8 +48,6 @@ export const findSmallestNumber = (number1, number2) => {
  */
 export const multiplyNumbers = (number1, number2) => {
   return number1 * number2;
-
-  return CSSMathProduct;
 };
 
 /* Intermediate Challenges */
@@ -64,6 +62,8 @@ export const multiplyNumbers = (number1, number2) => {
  * @param {number} highScore 325
  * @returns {string} "You got a new high score!" | "So close!" | "Better luck next time!"
  */
+
+// function 
 export const checkIfNewHighScore = (score, highScore) => {
   if (score > highScore) {
     return "You got a new high score!";
@@ -211,4 +211,3 @@ export const getStudentSummary = (score, name) => {
   }  
 
 };
-
