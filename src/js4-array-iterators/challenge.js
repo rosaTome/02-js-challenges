@@ -20,10 +20,9 @@
  */
 
 export const removeFalseValues = (booleanArr) => {
-  return booleanArr.filter(value => value === true)
+  const trueValues = booleanArr.filter((boolean) => boolean);
+  return trueValues;
 };
-
-console.log(removeFalseValues([true, true, false, false, true]));
 
 /**
  * A function that takes an array of numbers that are between 0 and 1.
@@ -34,10 +33,10 @@ console.log(removeFalseValues([true, true, false, false, true]));
  */
 
 export const createPercentageList = (numbersArr) => {
-  return numbersArr.map(number => `${Math.round(number * 100) }%`);
-};
+  const percentageList = numbersArr.map((number) => `${number * 100}%`);
+  return percentageList;
 
-console.log(createPercentageList([1, .5, .7, .25]));
+};
 
 /**
  * A function that takes an array of possessions and a name.
@@ -49,10 +48,11 @@ console.log(createPercentageList([1, .5, .7, .25]));
  */
 
 export const createListOfPossessions = (possessionsArr, name) => {
-  return possessionsArr
-  .map(item => `${name} ${item}`);
+  const possessionList = possessionsArr.map((possession) =>
+  name + " " + possession
+  );
+  return possessionList;
 };
-console.log(createListOfPossessions(["shoes", "jacket", "belt"], "disco"));
 
 /* Intermediate Challenges */
 
@@ -74,12 +74,10 @@ console.log(createListOfPossessions(["shoes", "jacket", "belt"], "disco"));
  */
 
 export const convertStringToNumbersArray = (numberString) => {
-  return numberString
-  .split('+')
-  .map(Number);
+  const numberArray = numberString.split("+").map((number) =>
+  Number(number));
+  return numberArray;
 };
-
-console.log(convertStringToNumbersArray("1+2+3+4+5"));
 
 /**
  * A function that takes a string of numbers joined with a "+" and creates a new array based on if the number is even or odd.
@@ -90,7 +88,11 @@ console.log(convertStringToNumbersArray("1+2+3+4+5"));
  */
 
 export const createOddEvenArray = (numberString) => {
-  return;
+  const numberArray = convertStringToNumbersArray(numberString);
+  const oddEvenArray = numberArray.map((number) =>
+  number % 2 === 0 ? "even" : "odd"
+  );
+  return oddEvenArray;
 };
 
 /**
@@ -103,7 +105,8 @@ export const createOddEvenArray = (numberString) => {
  */
 
 export const filterBooksBySearch = (booksArr, searchTerm) => {
-  return;
+  const searchResult = booksArr.filter((book) => book.includes (searchTerm))
+  return searchResult;
 };
 
 /* Advanced Challenges */
@@ -121,7 +124,7 @@ export const filterBooksBySearch = (booksArr, searchTerm) => {
  */
 
 export const formatStringArray = (stringArr) => {
-  const cleanedArr = stringArr.forEach((string) => {
+  const cleanedArr = stringArr.map((string) => {
     const cleanStr = string.trim().toLowerCase();
     return cleanStr;
   });
@@ -145,8 +148,15 @@ export const formatStringArray = (stringArr) => {
  */
 
 export const formatString = (string) => {
-  return;
+  const cleanStr = string.replace(/[^\w]|[\s\d]/gi, "");
+  const formatString = cleanStr
+    .split("")
+    .map((letter, index) =>
+      index % 2 === 0 ? letter.toUpperCase() : letter.toLowerCase()
+    );
+  return formatString;
 };
+
 
 /**
  * Expert Challenges
@@ -171,6 +181,19 @@ export const formatString = (string) => {
  * @return {string[]} [ "Fizz", "Buzz", "FizzBuzz", "2" ]
  */
 
-export const fizzBuzz = (mixedArray) => {
-  return;
+export const fizzBuzz = (mixedArray = []) => {
+  const positiveNumberArray = mixedArray.filter(
+    (item) => item > 0 && Number(item)
+  );
+
+  const fizzBuzz = positiveNumberArray.map((number) => {
+    let string = "";
+
+    if (!(number % 3)) string += "Fizz";
+    if (!(number % 5)) string += "Buzz";
+
+    return string || number.toString();
+  });
+
+  return fizzBuzz;
 };
