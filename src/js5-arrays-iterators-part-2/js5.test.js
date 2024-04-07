@@ -10,7 +10,7 @@ import {
   totalScoresArr,
 } from "./challenge";
 
-// REMOVE .skip FROM describe FUNCTION TO STOP SKIPPING TEST BLOCKS
+// REMOVE  FROM describe FUNCTION TO STOP SKIPPING TEST BLOCKS
 
 describe("Testing totalScoresArr()", () => {
   const scoresArr = Array(50).fill(20);
@@ -26,7 +26,7 @@ describe("Testing totalScoresArr()", () => {
   });
 });
 
-describe.skip("Testing reverseString()", () => {
+describe("Testing reverseString()", () => {
   it("Should return a String", () => {
     expect(typeof reverseString("coconut")).toBe("string");
     expect(typeof reverseString("test")).toBe("string");
@@ -48,7 +48,7 @@ describe.skip("Testing reverseString()", () => {
   });
 });
 
-describe.skip("Testing sortCharactersAlphabetically()", () => {
+describe("Testing sortCharactersAlphabetically()", () => {
   const lowerCaseCharArr = "dloejmixwrsnfacqyukvhtgzpb".split("");
   const upperCaseCharArr = "DLOEJMIXWRSNFACQYUKVHTGZPB".split("");
   const sortedCharArr = "abcdefghijklmnopqrstuvwxyz".split("");
@@ -88,7 +88,7 @@ describe.skip("Testing sortCharactersAlphabetically()", () => {
   });
 });
 
-describe.skip("Testing sortNumbersHighToLow()", () => {
+describe("Testing sortNumbersHighToLow()", () => {
   const lowToHigh = Array(50)
     .fill(1)
     .map((number, index) => (number += index));
@@ -131,7 +131,7 @@ describe.skip("Testing sortNumbersHighToLow()", () => {
   });
 });
 
-describe.skip("Testing checkItemInStock()", () => {
+describe("Testing checkItemInStock()", () => {
   const stockList = [
     "apple",
     "banana",
@@ -172,7 +172,7 @@ describe.skip("Testing checkItemInStock()", () => {
   });
 });
 
-describe.skip("Testing checkPrimaryColours()", () => {
+describe("Testing checkPrimaryColours()", () => {
   const rainbowColours = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
   const primaryColours = ["red", "yellow", "blue"];
 
@@ -197,7 +197,7 @@ describe.skip("Testing checkPrimaryColours()", () => {
   });
 });
 
-describe.skip("Testing checkStringPalindrome()", () => {
+describe("Testing checkStringPalindrome()", () => {
   it("Should return a Boolean", () => {
     expect(typeof checkStringPalindrome("red", "green")).toBe("boolean");
     expect(typeof checkStringPalindrome("green", "green")).toBe("boolean");
@@ -228,7 +228,7 @@ describe.skip("Testing checkStringPalindrome()", () => {
   });
 });
 
-describe.skip("Testing totalNestedScoresArr()", () => {
+describe("Testing totalNestedScoresArr()", () => {
   const nestedScoreArr = [
     [3, 2, 1],
     [45, 6, 2],
@@ -262,7 +262,7 @@ describe.skip("Testing totalNestedScoresArr()", () => {
   });
 });
 
-describe.skip("Testing encryptString()", () => {
+describe("Testing encryptString()", () => {
   it("Should return a string", () => {
     expect(typeof encryptString("defined")).toBe("string");
     expect(typeof encryptString("disco flex")).toBe("string");

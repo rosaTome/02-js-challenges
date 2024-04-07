@@ -20,7 +20,12 @@
  */
 
 export const totalScoresArr = (scoresArr) => {
-  return;
+  const totalScore = scoresArr.reduce(
+    (total, current) => (total += current),
+    0
+  );
+
+  return totalScore;
 };
 
 /**
@@ -33,7 +38,10 @@ export const totalScoresArr = (scoresArr) => {
  */
 
 export const reverseString = (toReverse) => {
-  return;
+  const stringArray = toReverse.split("");
+  const stringReversed = stringArray.reverse();
+  const stringJoined = stringArray.join("");
+  return stringJoined;
 };
 
 /**
@@ -46,7 +54,13 @@ export const reverseString = (toReverse) => {
  */
 
 export const sortCharactersAlphabetically = (characterArr) => {
-  return;
+  const lowerCase = characterArr.map((character) =>
+  character.toLowerCase()
+  );
+
+  const sortedChar = lowerCase.sort();
+
+  return sortedChar;
 };
 
 /* Intermediate Challenges */
@@ -61,7 +75,11 @@ export const sortCharactersAlphabetically = (characterArr) => {
  */
 
 export const sortNumbersHighToLow = (numberArr) => {
-  return;
+
+  const orderedNumbers = [...numberArr].sort((a, b) => {
+    return b - a;
+  })
+  return orderedNumbers;
 };
 
 /**
@@ -79,7 +97,29 @@ export const sortNumbersHighToLow = (numberArr) => {
  */
 
 export const checkItemInStock = (toCheck) => {
-  return;
+  const stockList = [
+    "apple",
+    "banana",
+    "orange",
+    "coconut",
+    "strawberry",
+    "lime",
+    "grapefruit",
+    "lemon",
+    "kumquat",
+    "blueberry",
+    "melon",
+  ];
+
+  const index = stockList.indexOf(toCheck);
+
+  let message = `Sorry ${toCheck} is not in stock.`;
+
+  if (index >= 0) {
+    message = `${toCheck} is in stock, it is on aisle ${index}.`;
+  }
+
+  return message;
 };
 
 /**
@@ -93,7 +133,13 @@ export const checkItemInStock = (toCheck) => {
  */
 
 export const checkPrimaryColours = (coloursArr) => {
-  return;
+  const primaryColours = ["red", "blue", "yellow"];
+
+    // Use the every() method to check if every colour in coloursArr is included in primaryColours array
+  const colourCheck = coloursArr.every((colour) =>
+    primaryColours.includes(colour)
+  );
+  return colourCheck;
 };
 
 /* Advanced Challenges */
@@ -108,7 +154,9 @@ export const checkPrimaryColours = (coloursArr) => {
  */
 
 export const checkStringPalindrome = (stringOne) => {
-  return;
+  const reversedString = reverseString(stringOne);
+  const checkPalindrome = reversedString === stringOne;
+  return checkPalindrome;
 };
 
 /**
@@ -122,7 +170,9 @@ export const checkStringPalindrome = (stringOne) => {
  */
 
 export const totalNestedScoresArr = (scoresArr) => {
-  return;
+  const score = scoresArr.map(totalScoresArr);
+
+  return score;
 };
 
 /* Expert Challenges */
@@ -153,5 +203,18 @@ export const totalNestedScoresArr = (scoresArr) => {
  */
 
 export const encryptString = (toEncrypt) => {
-  return;
+  const encrypted = toEncrypt
+  .split("")
+  .reduce(
+    (total, current, index) => {
+      const remainder = index % 3;
+      total[remainder].push(current);
+      return total;
+    },
+    [[], [], []]
+  )
+  .flat()
+  .join("");
+
+return encrypted;
 };
